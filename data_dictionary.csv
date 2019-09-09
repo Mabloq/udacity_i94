@@ -1,0 +1,39 @@
+table_schema,table_name,position,column_name,data_type,max_length,is_nullable,comments
+Dimension Table: Countries,,,,,,,
+public,countries,1,country_id,smallint,16,NO,"This id maps to the i94 forms cit_id and res_id, giving an idea of what countries like to visit which states"
+public,countries,2,name,character varying,100,NO,"This is a useful human readable name, that is more understandable than the Id used in i94 form"
+Dimension Table: demographics,,,,,,,
+public,demographics,1,demographics_id,character varying,100,NO,The demographics id is a concatenation of the port_id and the race_code.
+public,demographics,2,port_id,character varying,3,NO,port_id is the key that we will be joining with our i94 fact table
+public,demographics,3,city,character varying,100,YES,city is more human readable than port_id
+public,demographics,4,state,character varying,100,YES,state is more human readable than port_id
+public,demographics,5,median_age,numeric,4,YES,median age might be a good explanatory variable later on in my analysis of why people immigrate to this port
+public,demographics,6,male_population,integer,32,YES, might be a good explanatory variable later on in my analysis of why people immigrate to this port
+public,demographics,7,female_population,integer,32,YES,might be a good explanatory variable later on in my analysis of why people immigrate to this port
+public,demographics,8,total_population,integer,32,YES,might be a good explanatory variable later on in my analysis of why people immigrate to this port
+public,demographics,9,avg_household_size,numeric,3,YES,just curious not sure if it will help
+public,demographics,10,foreign_born,integer,32,YES,might be a good explanatory variable later on in my analysis of why people immigrate to this port
+public,demographics,11,race,character varying,100,YES,human readable race
+public,demographics,12,race_code,character varying,3,YES,race_code for shortened demographics_id
+Fact Table: i94,,,,,,,
+public,i94,1,cic_id,integer,32,NO,primary key
+public,i94,2,port_id,character varying,3,NO,join to demographics and ports tables 
+public,i94,3,visa_id,character varying,3,NO,join to visa table
+public,i94,4,cit_id,smallint,16,YES,join to countries table
+public,i94,5,res_id,smallint,16,YES,join to countries table
+public,i94,6,year,smallint,16,YES,year of filling our form
+public,i94,7,month,smallint,16,YES,month filling out form
+public,i94,8,age,smallint,16,YES,age of applicant
+public,i94,9,gender,character varying,2,YES,gender of applicant
+public,i94,10,arrival_date,date,,YES,date arrived in country
+public,i94,11,depart_date,date,,YES,date left country
+public,i94,12,date_begin,date,,YES,date approved visa
+public,i94,13,date_end,date,,YES,date expired visa
+Dimension Table: ports,,,,,,,
+public,ports,1,port_id,character varying,3,NO,
+public,ports,2,name,character varying,100,NO,
+public,ports,3,city,character varying,100,NO,
+public,ports,4,state,character varying,100,NO,
+Dimension Table: visa_codes,,,,,,,
+public,visa_codes,1,visa_id,character varying,3,NO,id for visa code found on i94 form
+public,visa_codes,2,visa_name,character varying,100,NO,human readable form of the visa-code

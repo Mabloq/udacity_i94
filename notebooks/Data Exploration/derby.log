@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Aug 31 19:06:16 EDT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-016c-e9ed-dfac-0000110bbaf8 
+on database directory /home/mabloq/airflow/notebooks/Data Exploration/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@12b0c5f1 
+Loaded from file:/home/mabloq/anaconda3/envs/airflow/lib/python3.6/site-packages/pyspark/jars/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_222-b10
+user.dir=/home/mabloq/airflow/notebooks/Data Exploration
+os.name=Linux
+os.arch=amd64
+os.version=3.10.0-957.27.2.el7.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
