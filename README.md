@@ -17,7 +17,7 @@ Datasets used and Goal of data
 
 I chose to do the Udacity provided project. The datasets used was the SAS dataset of the i94 forms, crossed with US City demographics data. Also used as supporting data sets was the i94 countries and i94 ports code descriptions. This supporting data sets and the demographic datasets would be used as dimensions in a star schema data warehouse with the i94 form dataset as the star.  
 
-Not all columns where used from the demographics and i94 form datasets. I was mostly interested in the data that will help analyze, where people of a certain age where ending up. Where people born in 1977 more likely to show up in “so and so” state and where people born in 1994 likely to visit “so and so” state more. If you look at the data dictionary provided with the project you will see a column with explanation as to why each column was kept. 
+Not all columns where used from the demographics and i94 form datasets. I was mostly interested in the data that will help analyze, where people of a certain age where ending up. Were people born in 1977 more likely to show up in “so and so” state and were people born in 1994 likely to visit “so and so” state mor? If you look at the data dictionary provided with the project you will see a column with explanation as to why each column was kept. 
 
 Example below is a query I made and then opened the results in tableau. I actually found that most
 states have a normal distribution of age. All well guess my answer is not very interesting. However, I did
