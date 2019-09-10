@@ -19,20 +19,6 @@ I chose to do the Udacity provided project. The datasets used was the SAS datase
 
 Not all columns where used from the demographics and i94 form datasets. I was mostly interested in the data that will help analyze, where people of a certain age where ending up. Where people born in 1977 more likely to show up in “so and so” state and where people born in 1994 likely to visit “so and so” state more. If you look at the data dictionary provided with the project you will see a column with explanation as to why each column was kept. 
 
- 
-
-[insert example query here with example result] 
-
-# Technology used and Goal 
-
-For this project I wanted to incorporate Spark, Airflow, and AWS (S3, Redshift). Although its not completely necessary to use these technologies, I used them for two reasons. One reason is I wanted to spend more time using and troubleshooting with these tools and the second reason is that these tools do help even if its overkill.  
-
-Spark was run on a stand-alone cluster locally on my machine along with Hadoop installed and sharing its class path with Spark. This was necessary to leverage reading and writing files directly from s3 with spark. Spark did help partition the very large i94 form dataset by age. 
-
-Airflow was definitely useful to organize my pipeline's dependencies. Subdags, where used and Custom Operators where designed to group and repetitive tasks easier to handle. 
-
-Most importantly S3 and Redshift were like the glue in all this. It is was really easy to copy from s3 to my redshift cluster and the redshift cluster allowed me to distribute the large i94 form data set by age.  
-
 Example below is a query I made and then opened the results in tableau. I actually found that most
 states have a normal distribution of age. All well guess my answer is not very interesting. However, I did
 get my answer. SUCCESS!
@@ -47,6 +33,18 @@ order by state, age
 ```
 
 ![alt text](https://i.imgur.com/cDl4iTk.png "hi")
+
+# Technology used and Goal 
+
+For this project I wanted to incorporate Spark, Airflow, and AWS (S3, Redshift). Although its not completely necessary to use these technologies, I used them for two reasons. One reason is I wanted to spend more time using and troubleshooting with these tools and the second reason is that these tools do help even if its overkill.  
+
+Spark was run on a stand-alone cluster locally on my machine along with Hadoop installed and sharing its class path with Spark. This was necessary to leverage reading and writing files directly from s3 with spark. Spark did help partition the very large i94 form dataset by age. 
+
+Airflow was definitely useful to organize my pipeline's dependencies. Subdags, where used and Custom Operators where designed to group and repetitive tasks easier to handle. 
+
+Most importantly S3 and Redshift were like the glue in all this. It is was really easy to copy from s3 to my redshift cluster and the redshift cluster allowed me to distribute the large i94 form data set by age.  
+
+
 # Addressing Other Scenarios 
 
 The data was increased by 100x. 
